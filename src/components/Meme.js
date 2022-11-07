@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import memeData from '../memeData.js';
+
 
 let url;
 
-function getMemeImg(e){
-    e.preventDefault();
-//  console.log('test>>',memeData);
- const memeArray = memeData.data.memes;
- const randomNumber = Math.floor(Math.random() * memeArray.length);
-//  console.log(randomNumber);
-  url = memeArray[randomNumber].url;
- console.log(url);
-}
-
 function Meme(props) {
-    return (
+  const [memeImage, setMemeImage] = useState("");
+  function getMemeImg(e) {
+    e.preventDefault();
+    //  console.log('test>>',memeData);
+    const memeArray = memeData.data.memes;
+    const randomNumber = Math.floor(Math.random() * memeArray.length);
+    setMemeImage(url = memeArray[randomNumber].url)
+    //  console.log(randomNumber);
+    // url = memeArray[randomNumber].url;
+    // console.log(url);
+  }
+  return (
+    <>
       <div>
         <main>
-          <p>{url}</p>
           <form className="form">
             <div className="input--wrap">
               <input
@@ -38,7 +40,11 @@ function Meme(props) {
           </form>
         </main>
       </div>
-    );
+      <div>
+        <img src={memeImage}></img>
+      </div>
+    </>
+  );
 }
 
 export default Meme;
