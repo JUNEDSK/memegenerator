@@ -3,26 +3,27 @@ import { useState } from 'react';
 
 function DemoItem(props) {
 
+  const [isThingsArry, setThingsArry] = useState(["thing1", "thing1"]);
 
-    const [things, setThings] = useState(["thing 1", "thing 2"]);
-    
-    function additem(){
-        const newthingText = `thing ${things.length + 1}`
-        setThings(prevState => [...prevState, newthingText])
-    }
 
-    const thingselements = things.map(thing => <p key={thing}>{thing}</p>)
+  function additem() {
+    setThingsArry(prevState => {
+      return [...prevState, `thing ${prevState.length + 1}`]
+    })
+  }
 
-    return (
-      <>
-        <div>
-            <button onClick={additem} >Add Item</button>
-        </div>
-        <div>
-            {thingselements}
-        </div>
-      </>
-    );
+  const thingselements = isThingsArry.map(thing => <p key={thing}>{thing}</p>)
+
+  return (
+    <>
+      <div>
+        <button onClick={additem} >Add Item</button>
+      </div>
+      <div>
+        {thingselements}
+      </div>
+    </>
+  );
 }
 
 export default DemoItem;
