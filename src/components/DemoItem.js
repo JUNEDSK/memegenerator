@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function DemoItem(props) {
 
-  const [isThingsArry, setThingsArry] = useState(["thing1", "thing1"]);
+  const [isThingsArry, setThingsArry] = useState(["thing1", "thing2"]);
 
 
   function additem() {
