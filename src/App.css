@@ -80,3 +80,26 @@ body {
   width: 100%;
   padding: 20px;
 }
+
+
+/* cardcss */
+
+.card {
+  background: #eee;
+  width: 300px;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.card--image {
+  width: 100%;
+}
+
+.card--info {
+  padding: 0;
+}
+
+.card--favorite {
+  width: 50px;
+}
