@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import WatchInput from './components/WatchInput';
+import SignUpForm from './components/SignUpForm';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       </div> */}
       {/* <DemoItem></DemoItem> */}
       {/* <ContactCard></ContactCard> */}
-      <WatchInput></WatchInput>
+      <SignUpForm></SignUpForm>
     </>
   );
 }
