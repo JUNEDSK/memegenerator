@@ -150,3 +150,34 @@ body {
   float: right;
   padding-top: 16px;
 }
+
+.meme{
+  position: relative;
+  top: 50px;
+  width: 410px;
+  margin: 0 auto;
+}
+
+.meme img{
+  width: 100%;
+}
+.meme--text{
+  position: absolute;
+  color: #fff;  
+  left: 0;
+  right: 0;
+  text-align:center  ;
+  font-size: 50px;
+}
+
+.meme--text.top{
+  top: 0;
+}
+
+.meme--text.bottom{
+  bottom: 0px;
+}
+
+.mainMemeWrap{
+  padding:0 50px;
+}

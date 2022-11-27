@@ -27,35 +27,46 @@ up for our news letter ! " to the conso le.
             UserName: "John",
             PassWord: "",
             ConfirmPassword: "",
-            newsLetter: false
+            newsLetter: false,
         }
     );
 
     function handleChange(event) {
-        const { type, password, name, value, checked } = event.target;
+        const { type, name, value, checked } = event.target;
         setformData((prevFormData) => {
             return {
                 ...prevFormData,
-                [name]: type === "checkbox" ? checked : value
+                [name]: type === "checkbox" ? checked : value,   
             }
         })
     }
 
     function handleSubmit(event) {
-        event.preventDefault()
-        console.log(formData);
+        event.preventDefault() 
+        // console.log(formData);
+        if(formData.PassWord === formData.ConfirmPassword){
+            console.log("successfull password")
+        }else{
+            console.log("password do not match")
+            return
+        }
+
+
+        if(formData.newsLetter){
+            console.log("thanks for signin up newsletter")
+        }
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <div className='SignUp' >
-                <div class="container">
+                <div className="container">
                     <input type="text" placeholder="Enter Username" name="UserName" onChange={handleChange} value={formData.UserName} />
                     <input type="password" placeholder="Enter Password" name="PassWord" onChange={handleChange} value={formData.PassWord} />
                     <input type="password" placeholder="Confirm Password" name="ConfirmPassword" onChange={handleChange} value={formData.ConfirmPassword} />
 
                     <div>
-                        <input type="checkbox" id="newsLetter" name="newsLetter" checked={formData.newsLetter} /> I want to join the newsletter
+                        <input type="checkbox" id="newsLetter" name="newsLetter" onChange={handleChange} checked={formData.newsLetter} /> I want to join the newsletter
                         <label htmlFor="newsLetter">this is checkbox</label>
                     </div>
 
